@@ -8,5 +8,3 @@ page = BooksPage(page_content)
 
 books = page.books
 
-for book in books:
-    print(book)

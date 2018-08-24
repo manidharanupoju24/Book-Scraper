@@ -1,6 +1,16 @@
 import requests
+import logging
 
 from pages.books_page import BooksPage
+
+logging.basicConfig(format='%(asctime)s %(levelname)-8s [%(filename)s: %(lineno)d] %(message)s',
+                    datefmt='%d-%m-%Y %H:%M:%S',
+                    level=logging.DEBUG,
+                    filename='logs.txt')
+
+logger = logging.getLogger('scraping')
+
+logger.info('Loading books list...')
 
 page_content = requests.get('http://books.toscrape.com').content
 
